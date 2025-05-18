@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brandon Collins | Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- SVG ICONS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <style></style>
+  </head>
+  <body>
+    <nav class="vsc-topnav">
+      <div class="vsc-logo">
+        <i class="devicon-vscode-plain"></i>
+        BC Code
+      </div>
+      <ul class="vsc-topnav-links">
+        <li data-section="hero" class="active">Home</li>
+        <li data-section="bio">About</li>
+        <li data-section="skills">Skills</li>
+      </ul>
+    </nav>
+
+    <div class="vsc-layout">
+      <aside class="vsc-sidebar" id="vsc-sidebar">
+        <div class="vsc-sidebar-title">EXPLORER</div>
+        <ul>
+          <li data-section="hero" class="active">home.js</li>
+          <li data-section="bio">about.js</li>
+          <li data-section="skills">skills.js</li>
+        </ul>
+      </aside>
+      <main class="vsc-main">
+        <section id="hero" class="vsc-section active">
+          <h1>&lt;Hello, I'm Brandon Collins /&gt;</h1>
+          <p class="vsc-tagline">
+            <span id="typing-text"></span><span class="caret"></span>
+          </p>
+        </section>
+        <section id="bio" class="vsc-section">
+          <h2>&lt;About Me /&gt;</h2>
+          <pre id="about-typing">
+const aboutMe = {
+  name: "Brandon Collins",
+  role: "Full Stack Developer",
+  education: "BSc Information Technology, Wayne State University",
+  interests: [
+    "Building custom PCs",
+    "Modding games",
+    "Mechanical keyboards",
+    "Raspberry Pi projects",
+    "Reading tech & psychology",
+    "AI conversations"
+  ],
+  bio: "I thrive where logic meets creativity, whether it’s debugging code, designing user-friendly systems, or brainstorming tech solutions with a business mindset."
+};
+        </pre
+          >
+        </section>
+        <section id="skills" class="vsc-section">
+          <h2>&lt;Skills /&gt;</h2>
+          <ul class="vsc-skills-list">
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
+                />
+              </span>
+            </li>
+
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
+                />
+              </span>
+            </li>
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                />
+              </span>
+            </li>
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                />
+              </span>
+            </li>
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
+                />
+              </span>
+            </li>
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg"
+                />
+              </span>
+            </li>
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+                />
+              </span>
+            </li>
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
+                />
+              </span>
+            </li>
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+                />
+              </span>
+            </li>
+            <li>
+              <span class="vsc-skill">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original-wordmark.svg"
+                />
+              </span>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <footer class="vsc-footer">
+      <div class="footer-left">© 2025 Brandon Collins</div>
+    </footer>
+
+    <script>
+      // Typing effect for hero
+      const heroText =
+        "Full Stack Developer | Building modern, user-friendly web applications";
+      const typingText = document.getElementById("typing-text");
+      let heroIdx = 0;
+      let heroTimer;
+
+      function typeHero() {
+        if (heroIdx <= heroText.length) {
+          typingText.textContent = heroText.slice(0, heroIdx);
+          heroIdx++;
+          heroTimer = setTimeout(typeHero, 40);
+        }
+      }
+
+      function resetHeroTyping() {
+        clearTimeout(heroTimer);
+        heroIdx = 0;
+        typingText.textContent = "";
+        typeHero();
+      }
+
+      // Typing effect for about
+      const aboutText = `const aboutMe = {
+  name: "Brandon Collins",
+  role: "Full Stack Developer",
+  education: [
+    "Macomb Community College": "AAS Information Technology",
+    "Macomb Community College": "Web Development Certificate",
+    "Wayne State University": "BS Information Technology"
+  ],
+  interests: [
+    "Building custom PCs",
+    "Modding games",
+    "Retro emulation",
+    "Mechanical keyboards",
+    "Raspberry Pi projects",
+    "Reading tech & psychology",
+    "AI conversations"
+  ],
+  bio: "I thrive where logic meets creativity, whether it’s debugging code, designing user-friendly systems, or brainstorming tech solutions with a business mindset."
+};`;
+      const aboutTyping = document.getElementById("about-typing");
+      let aboutIdx = 0;
+      let aboutTimer;
+
+      function typeAbout() {
+        if (aboutIdx <= aboutText.length) {
+          aboutTyping.textContent = aboutText.slice(0, aboutIdx);
+          aboutIdx++;
+          aboutTimer = setTimeout(typeAbout, 18);
+        }
+      }
+
+      function resetAboutTyping() {
+        clearTimeout(aboutTimer);
+        aboutIdx = 0;
+        aboutTyping.textContent = "";
+        typeAbout();
+      }
+
+      // Navigation logic for section switching and sidebar highlighting
+      const topLinks = document.querySelectorAll(".vsc-topnav-links li");
+      const sidebarLinks = document.querySelectorAll(".vsc-sidebar ul li");
+      const sections = document.querySelectorAll(".vsc-section");
+
+      function setActiveSection(section) {
+        sections.forEach((sec) => sec.classList.remove("active"));
+        document.getElementById(section).classList.add("active");
+        topLinks.forEach((link) =>
+          link.classList.toggle("active", link.dataset.section === section)
+        );
+        sidebarLinks.forEach((link) =>
+          link.classList.toggle("active", link.dataset.section === section)
+        );
+
+        // Reset typing effects when switching sections
+        if (section === "hero") resetHeroTyping();
+        if (section === "bio") resetAboutTyping();
+      }
+
+      topLinks.forEach((link) => {
+        link.addEventListener("click", () =>
+          setActiveSection(link.dataset.section)
+        );
+      });
+      sidebarLinks.forEach((link) => {
+        link.addEventListener("click", () =>
+          setActiveSection(link.dataset.section)
+        );
+      });
+
+      // Initial typing effect
+      typeHero();
+    </script>
+  </body>
+</html>
